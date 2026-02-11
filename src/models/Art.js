@@ -6,7 +6,9 @@ export class Artwork {
 
     this.id = data.id
     this.description = data.description
-    this.imgUrl = data.imgUrl
-    
+    this.imgUrls = data.imgUrls
+    this.attribution = data.attribution
+    this.originalLink = data.originalLink
+    this.slug = data.slug
   }
 }

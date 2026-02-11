@@ -7,7 +7,7 @@ import { api } from "./AxiosService.js"
 
 class ArtWorksService {
 
-async getArtWork() {
+async getArtwork() {
   const response = await api.get(`api/artworks`)
   logger.log('Got Art', response.data)
   const artwork = response.data.results.map(pojo => new Artwork(pojo))

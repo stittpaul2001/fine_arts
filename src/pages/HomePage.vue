@@ -12,7 +12,7 @@ const ArtWorks = computed(() => AppState.ArtWorks)
 
 onMounted(() => {
   logger.log('Home page is mounted!')
-  getArtwork()
+  getArtWork()
 })
 
 onUnmounted(() => {
@@ -20,7 +20,7 @@ onUnmounted(() => {
 })
 
 
-async function getArtwork() {
+async function getArtWork() {
   try {
     await artworksService.getArtwork()
   }
@@ -39,7 +39,7 @@ async function getArtwork() {
     <section class="container">
       <div class="row">
         <div class="col">
-          <h1>ArtWorks</h1>
+          <h1>ArtWork</h1>
         </div>
       </div>
     </section>
@@ -48,7 +48,9 @@ async function getArtwork() {
   <section class="container">
     <div class="row">
       <div class="col-12">
-        {{ Artwork }}
+        <div v-for="artworks in artworks" :key="artworks.id">
+          🖼️{{ artworks }}
+        </div>
       </div>
     </div>
   </section>
